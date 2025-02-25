@@ -1,0 +1,30 @@
+{
+    "haproxy_endpoint": "http://localhost:9000",
+    "api_key": "your_api_key_here",
+    "load_balancing_algorithm": "roundrobin",
+    "backends": [
+      {
+        "name": "server1",
+        "ip": "192.168.1.101",
+        "port": 80,
+        "weight": 10
+      },
+      {
+        "name": "server2",
+        "ip": "192.168.1.102",
+        "port": 80,
+        "weight": 10
+      }
+    ],
+    "health_check": {
+      "enabled": true,
+      "interval": 5,
+      "fall": 3,
+      "rise": 2
+    },
+    "retry_policy": {
+      "retries": 3,
+      "redispatch": true
+    }
+  }
+  
